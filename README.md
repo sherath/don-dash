@@ -26,4 +26,4 @@ Running without overriding the container's CMD (putting nothing after dondash) o
 
 If you override the default CMD with `/app/scan_with_halo.sh`, you will cause the Halo agent to start, and a script will tell the grid to initiate CSM and SVM scans against the image.  When the scans are finished, it pretty-prints the scan results to stdout.
 
-If you override the default CMD with `/app/run_with_halo`, you'll run the application *and* the Halo agent in the container.
+If you override the default CMD with `/app/run_with_halo.sh`, you'll run the application *and* the Halo agent in the container.
