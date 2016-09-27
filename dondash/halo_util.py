@@ -35,7 +35,11 @@ class SecurityReporter(object):
         # Get results
         print "Getting scan results"
         for scan_type in scan_types:
-            results = scan_module.last_scan_results(agent_id, scan_type)
+            try:
+                results = scan_module.last_scan_results(agent_id, scan_type)
+            except CloudPassageValidation as e:
+                message = "Error encountered: %s" % str(e)
+                result = {"result": message}
             raw_scan_results.append(results)
         # Process and print scan results
         pretty = self.print_pretty_scans(raw_scan_results)

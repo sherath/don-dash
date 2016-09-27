@@ -14,7 +14,8 @@ RUN apt-get update && \
 
 RUN pip install \
     flask \
-    cloudpassage
+    cloudpassage \
+    pytest
 
 #########
 # Set up the CloudPassage repo, install the agent
